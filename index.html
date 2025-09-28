@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Simulador de Parede</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adicionar meta tags para app mobile -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#3498db">
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Simulador de Parede</h1>
+        
+        <!-- Controles Mobile-Friendly -->
+        <div class="controls">
+            <div class="control-group">
+                <h3>🎨 Cor da Parede</h3>
+                <input type="color" id="wallColor" value="#f0f0f0">
+                <div class="preset-colors">
+                    <button class="color-btn" data-color="#ffffff" style="background: #ffffff;" title="Branco"></button>
+                    <button class="color-btn" data-color="#f5f5dc" style="background: #f5f5dc;" title="Bege"></button>
+                    <button class="color-btn" data-color="#add8e6" style="background: #add8e6;" title="Azul"></button>
+                    <button class="color-btn" data-color="#90ee90" style="background: #90ee90;" title="Verde"></button>
+                    <button class="color-btn" data-color="#ffb6c1" style="background: #ffb6c1;" title="Rosa"></button>
+                    <button class="color-btn" data-color="#ffe4b5" style="background: #ffe4b5;" title="Pêssego"></button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>📐 Formato</h3>
+                <select id="wallShape">
+                    <option value="rectangular">Retangular</option>
+                    <option value="rounded">Arredondado</option>
+                    <option value="oval">Oval</option>
+                    <option value="arch">Arco</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <h3>🧱 Textura</h3>
+                <select id="wallTexture">
+                    <option value="none">Lisa</option>
+                    <option value="brick">Tijolo</option>
+                    <option value="wood">Madeira</option>
+                    <option value="stone">Pedra</option>
+                    <option value="stripes">Listras</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <h3>🖼️ Decoração</h3>
+                <input type="file" id="imageUpload" accept="image/*" style="margin-bottom: 10px;">
+                <button id="addFrame" class="btn-action">➕ Moldura</button>
+                <button id="clearWall" class="btn-danger">🗑️ Limpar</button>
+            </div>
+
+            <div class="control-group">
+                <h3>💡 Brilho</h3>
+                <input type="range" id="brightness" min="50" max="150" value="100" class="brightness-slider">
+                <label for="brightness">Brilho: <span id="brightnessValue">100%</span></label>
+            </div>
+        </div>
+
+        <!-- Área da Parede -->
+        <div class="wall-container">
+            <div id="wall" class="wall">
+                <div class="wall-items" id="wallItems">
+                    <!-- Itens adicionados dinamicamente -->
+                </div>
+            </div>
+            
+            <!-- Elementos decorativos da casa -->
+            <div class="floor"></div>
+            <div class="baseboard"></div>
+        </div>
+
+        <!-- Instruções para mobile -->
+        <div class="mobile-instructions">
+            <p>📱 Toque e arraste os elementos na parede</p>
+            <p>🖼️ Toque duplo para remover itens</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
